@@ -1,6 +1,13 @@
 import React from 'react'
 
-const InputFiel = ({ value, label, placeholder, onChange, type = 'text', error = '' }) => {
+const InputFiel = ({
+    value,
+    label,
+    placeholder,
+    onChange,
+    type = 'text',
+    error = '',
+    readOnly = false }) => {
 
     return (
         <div className='my-4 flex flex-col'>
@@ -11,6 +18,7 @@ const InputFiel = ({ value, label, placeholder, onChange, type = 'text', error =
                 name={value}
                 value={value}
                 onChange={onChange}
+                readOnly={readOnly}
             />
             <p className='error mt-2'>{error}</p>
         </div>

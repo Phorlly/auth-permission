@@ -10,6 +10,8 @@ import Post from '../pages/post'
 import Home from '../pages/home'
 import SignIn from '../pages/sign-in'
 import SignUp from '../pages/sign-up'
+import Profile from "../pages/profile";
+import ProfileForm from "../components/profile-form";
 
 
 
@@ -52,6 +54,14 @@ const AllRoutes = () => {
                         {
                             index: true,
                             element: <Home user={user} />,
+                        },
+                        {
+                            path: 'profile/:id',
+                            element: <Profile />
+                        },
+                        {
+                            path: 'profile/modify/:id',
+                            element: <ProfileForm title="Modify your profle" />
                         },
                         {
                             path: 'user',

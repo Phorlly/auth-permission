@@ -46,7 +46,7 @@ const Layout = ({ user, setUser, setToken, token }) => {
                     </div>
                     {user?.name && token
                         ? (
-                            <div className='space-x-4 flex items-center'>
+                            <div className='space-x-2 flex items-center'>
                                 <p className='text-slate-400 text-sm'>
                                     Hello, {user?.name}
                                     {/* <b className='px-1'>{user.name}</b> */}
@@ -54,12 +54,16 @@ const Layout = ({ user, setUser, setToken, token }) => {
                                 <form onSubmit={signOff}>
                                     <button className="nav-link border">Sign Off</button>
                                 </form>
+                                <Link to={`/profile/${user?.id}`}
+                                    className='nav-link border'>
+                                    Profile
+                                </Link>
                             </div>
                         )
                         : (
-                            <div className='space-x-4'>
-                                <Link to='/sign-in' className='nav-link'>Sign In</Link>
-                                <Link to='/sign-up' className='nav-link'>Sign Up</Link>
+                            <div className='space-x-2'>
+                                <Link to='/sign-in' className='nav-link border'>Sign In</Link>
+                                <Link to='/sign-up' className='nav-link border'>Sign Up</Link>
                             </div>
                         )
                     }
